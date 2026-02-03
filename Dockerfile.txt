@@ -1,0 +1,9 @@
+# Base image with Java 17
+FROM openjdk:17
+WORKDIR /app
+
+# Copy the JAR file built by Maven
+COPY target/*.jar app.jar
+
+# Command to run the app
+CMD ["java", "-jar", "app.jar"]
