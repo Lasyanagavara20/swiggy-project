@@ -3,33 +3,21 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
+        stage('Build') {
             steps {
-                echo 'Checking out source code from GitHub'
+                echo 'Building Swiggy application'
             }
         }
 
-        stage('Build with Maven') {
+        stage('Test') {
             steps {
-                echo 'Building Swiggy application (Maven simulation)'
+                echo 'Testing Swiggy application'
             }
         }
 
-        stage('SonarQube Analysis') {
+        stage('Deploy') {
             steps {
-                echo 'Running SonarQube analysis (simulation)'
-            }
-        }
-
-        stage('Build Docker Image') {
-            steps {
-                echo 'Building Docker image (simulation)'
-            }
-        }
-
-        stage('Push Docker Image') {
-            steps {
-                echo 'Pushing Docker image to registry (simulation)'
+                echo 'Deploying Swiggy application'
             }
         }
     }
