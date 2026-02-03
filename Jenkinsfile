@@ -2,21 +2,34 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+
+        stage('Checkout Code') {
             steps {
-                echo 'Building Swiggy Application...'
+                echo 'Checking out source code from GitHub'
             }
         }
 
-        stage('Test') {
+        stage('Build with Maven') {
             steps {
-                echo 'Running Test Cases...'
+                echo 'Building Swiggy application (Maven simulation)'
             }
         }
 
-        stage('Deploy') {
+        stage('SonarQube Analysis') {
             steps {
-                echo 'Deploying Swiggy Application...'
+                echo 'Running SonarQube analysis (simulation)'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                echo 'Building Docker image (simulation)'
+            }
+        }
+
+        stage('Push Docker Image') {
+            steps {
+                echo 'Pushing Docker image to registry (simulation)'
             }
         }
     }
